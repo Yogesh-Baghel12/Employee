@@ -432,3 +432,53 @@ def UPDATE_MANAGER(request):
         messages.success(request,'Record are succesfully updated')
         return redirect('view_manager')
     return render(request,'Admin/edit_manager.html')
+
+
+def all_employees(request):
+    employees = list(Employee.objects.all())
+    staffs = list(Staff.objects.all())
+    all_employees = employees + staffs  # Combine the two lists
+    context = {
+        'all_employees': all_employees,
+    }
+    return render(request, 'Admin/all_employee.html', context)
+
+@login_required(login_url='/')
+def ALL_DEPARTMENT(request):
+    department=Departement.objects.all()
+    context={
+        'department':department,
+    }
+    return render(request,'Admin/all_department.html',context)
+
+@login_required(login_url='/')
+def active_staff_and_employees(request):
+
+    active_staff = Staff.objects.filter(status=Staff.STATUS_ACTIVE)
+    active_employees = Employee.objects.filter(status=Employee.STATUS_ACTIVE)
+    
+    active_people = list(active_staff) + list(active_employees)
+    
+    context = {
+        'active_people': active_people,
+    }
+    
+    return render(request, 'Admin/active_employees.html', context)
+
+@login_required(login_url='/')
+def inactive_staff_and_employees(request):
+
+    inactive_staff = Staff.objects.filter(status=Staff.STATUS_INACTIVE)
+    inactive_employees = Employee.objects.filter(status=Employee.STATUS_INACTIVE)
+    
+    active_people = list(inactive_staff) + list(inactive_employees)
+    
+    context = {
+        'active_people': active_people,
+    }
+    
+    return render(request, 'Admin/inactive_employees.html', context)
+
+
+def STAFF_LEAVE_VIEW(request):
+    return render(request,'Admin/staff_leave.html')

@@ -21,7 +21,7 @@ def dologin(request):
             if user_type=='1':
                 return redirect('home')
             elif user_type=='2':
-                return HttpResponse('Staff login')
+                return redirect('manager_home')
             elif user_type=='3':
                 return HttpResponse("employee login")
             else:

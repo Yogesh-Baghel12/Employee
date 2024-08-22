@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="content container-fluid">
+       <div class="page-header">
+          <div class="row align-items-center">
+             <div class="col">
+                <h3 class="page-title">Manager Leave</h3>
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                   <li class="breadcrumb-item active">Manager Leaves</li>
+                </ul>
+             </div>
+             {% include "includes/messages.html" %}
+          <!--  <div class="col-auto text-right float-right ml-auto">
+                <a href="#" class="btn btn-outline-primary mr-2"><i class="fas fa-download"></i> Download</a>
+                <a href="{% url "add_employee" %}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+        </div>
+        -->
+    </div>
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+       <div class="card card-table">
+          <div class="card-body">
+             <div class="table-responsive">
+                <table class="table table-hover table-center mb-0 datatable">
+                   <thead>
+                      <tr>
+                         <th>ID</th>
+                         <th>Manager Name</th>
+                         <th>Manager ID</th>
+                         
+                         <th>from Date</th>   
+                         <th>To Date</th>
+                         <th>Reason</th>
+                
+                         <th class="text-right">Action</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                   <!-- {% for i in employee %}-->
+                      <tr>
+                         <td style="text-align: center;">1</td>
+                         <td style="text-align: center;">
+                            <h2 class="table-avatar">
+                               <a href="student-details.html">yogesh</a>
+                            </h2>
+                         </td>
+                         <td style="text-align: center;">SM0067</td>
+                         <td style="text-align: center;">7.8.2024</td>
+                         <td style="text-align: center;">9.8.2024</td>
+                         <td style="text-align: center;">y@gmail.com</td>    
+                                    
+                         <td  style="text-align: center;">
+                            <div class="actions">
+                               <a href="{% url "edit_employee" i.id %}" class="btn btn-sm bg-success-light mr-2">
+                               <i class="fas fa-pen"></i>
+                               </a>
+                            </div>
+                         </td>
+                      </tr>
+                      <!--{% endfor %}-->
+                   </tbody>
+                </table>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+</div>
+
+
+{% endblock content %}
+
+
+

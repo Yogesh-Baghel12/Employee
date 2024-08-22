@@ -20,7 +20,7 @@
                 </div>
                 <div class="db-info">
                    <h3>{{total_employee_count}}</h3>
-                   <h6>Employees</h6>
+                   <h6><a href="{% url 'all_employees' %}"><h6>Employees</h6></a></h6>
                 </div>
              </div>
           </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="db-info">
                    <h3>{{department_count}}</h3>
-                   <h6>Department</h6>
+                   <h6><a href="{% url 'all_department' %}"><h6>Departments</h6></a></h6>
                 </div>
              </div>
           </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="db-info">
                    <h3>{{active_employees_staff}}</h3>
-                   <h6>Active Employee</h6>
+                   <h6><a href="{% url 'active_employee' %}"><h6>Active Employees</h6></a></h6>
                 </div>
              </div>
           </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="db-info">
                    <h3>{{inactive_employees_staff}}</h3>
-                   <h6>Inactive Employee</h6>
+                   <h6><a href="{% url 'inactive_employee' %}"><h6>Inactive Employees</h6></a></h6>
                 </div>
              </div>
           </div>
